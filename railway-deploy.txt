@@ -1,0 +1,36 @@
+You don't need to upload the Docker image to GitHub. Railway can deploy directly from your GitHub repo using the Dockerfile and docker-compose.yml you already have.
+
+Here's what to do:
+
+Create a GitHub repo (if you don't have one):
+
+Go to https://github.com/new
+Create a repo (e.g., asana-trello-automation)
+Don't initialize with README (you already have one)
+Push your code to GitHub:
+
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/asana-trello-automation.git
+git push -u origin main
+Connect to Railway:
+
+Go to https://railway.app
+Sign up with GitHub
+Click "New Project" → "Deploy from GitHub repo"
+Select your repo
+Railway will auto-detect the Dockerfile and deploy
+Set environment variables in Railway:
+
+In the Railway dashboard, go to your project
+Click the service → "Variables"
+Add all your .env variables (ASANA_ACCESS_TOKEN, TRELLO_API_KEY, etc.)
+Get your public URL:
+
+Railway assigns a public URL automatically
+Use that URL for your Asana webhook: https://your-railway-url.railway.app/webhook/asana
+That's it! Railway handles the Docker deployment automatically.
+
+Need help with any of these steps?
